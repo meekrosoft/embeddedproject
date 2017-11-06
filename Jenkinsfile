@@ -6,6 +6,11 @@ pipeline {
        }
    }
    stages {
+      stage ('Clean'){
+            steps {
+                sh './gradlew clean'
+            }
+        }
         stage ('Increment version'){
             steps {
                 sh './gradlew incrementVersion'
